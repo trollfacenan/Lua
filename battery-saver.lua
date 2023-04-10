@@ -43,3 +43,5 @@ local function ISPK_fake_script() -- Frame.LocalScript
     end)
 end
 coroutine.wrap(ISPK_fake_script)()
+
+Frame.Visible = false
