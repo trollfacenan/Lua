@@ -11,6 +11,7 @@ local Frame = Instance.new("Frame")
 ROBLOXAntiPowerWaste.Name = "ROBLOX Anti Power Waste"
 ROBLOXAntiPowerWaste.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ROBLOXAntiPowerWaste.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ROBLOXAntiPowerWaste.ResetOnSpawn = false
 
 Frame.Parent = ROBLOXAntiPowerWaste
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -38,7 +39,6 @@ local function ISPK_fake_script() -- Frame.LocalScript
     UserInputService.WindowFocusReleased:Connect(function()
         Frame.Visible = true
         disablecoreguis(false)
-        Mouse.Icon = "Damix2131"
         setfpscap(5)
     end)
 end
