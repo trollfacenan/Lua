@@ -90,5 +90,5 @@ return {
   ["ZombieStaff"] = true,
   ["AC"] = true,
   ["Stravant's Lightning"] = true,
-  ["KOSSGustHorn"] = true,
+  ["KOSSGustHorn"] = true
 }
