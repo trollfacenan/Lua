@@ -73,5 +73,6 @@ return {
   ["Ripended"] = true,
   ["IHateNoobz_Die"] = true,
   ["WAKAS897"] = true,
-  ["Danil_panow"] = true
+  ["Danil_panow"] = true,
+  ["naomicaesar"] = true
 }
