@@ -88,4 +88,7 @@ return {
   ["WiringTool"] = true,
   ["WormholeTunneler"] = true,
   ["ZombieStaff"] = true,
+  ["AC"] = true,
+  ["Stravant's Lightning"] = true,
+  ["KOSSGustHorn"] = true,
 }
