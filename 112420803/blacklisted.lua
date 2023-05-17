@@ -1,4 +1,5 @@
 return {
+  ["elgamby29100220pro"] = true,
   ["0FFEMA"] = true,
   ["1x1x1xlc"] = true,
   ["433t4cem75lss481p6"] = true,
