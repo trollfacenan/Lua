@@ -2,7 +2,25 @@
 -- editing for my own purpouses
 
 local Player = game.Players.LocalPlayer
-local serverEndpoint = Player.Character.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Player.Backpack.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local Character = Player.Character
+local Backpack = Player.Backpack
+local ToolName
+
+if Character:FindFirstChildOfClass("Tool") then
+    for i,v in pairs(Backpack:GetChildren()) do
+        if v:IsA("Tool") and vFindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") == true then
+            ToolName = v.Name
+        end
+    end
+else
+    for i,v2 in pairs(Character:GetChildren()) do -- for people that use equip all tool
+        if v2:IsA("Tool") and v2:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") == true then
+            ToolName = v2.Name
+        end
+    end
+end
+
+local serverEndpoint = Player.Character[ToolName]:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Player.Backpack.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn"}
 local defaultProperties = {}
 local defaultPart = Instance.new("Part")
