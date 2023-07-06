@@ -11,18 +11,10 @@ local Character = Player.Character
 local Backpack = Player.Backpack
 local ToolName
 
-if Character:FindFirstChildOfClass("Tool") then
-    for i,v in pairs(Backpack:GetChildren()) do
-        if v:IsA("Tool") and vFindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") == true then
-            ToolName = v.Name
-        end
-    end
-else
-    for i,v2 in pairs(Character:GetChildren()) do -- for people that use equip all tool
-        if v2:IsA("Tool") and v2:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") == true then
-            ToolName = v2.Name
-        end
-    end
+for i,v in Player:GetDescendants() do
+	if v:IsA("Tool") and v:FindFirstChildOfClass("BindableFunction") or v:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") then
+		ToolName = v.Parent
+	end
 end
 
 local serverEndpoint = Character[ToolName]:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack[ToolName]:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
