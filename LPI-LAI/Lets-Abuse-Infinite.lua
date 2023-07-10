@@ -16,7 +16,9 @@ LL:::::::LLLLLLLLL:::::L   A:::::A             A:::::A   II::::::II
 L::::::::::::::::::::::L  A:::::A               A:::::A  I::::::::I
 L::::::::::::::::::::::L A:::::A                 A:::::A I::::::::I
 LLLLLLLLLLLLLLLLLLLLLLLLAAAAAAA                   AAAAAAAIIIIIIIIII
-                                                                   
+
+
+                          https://discord.gg/zfKUa4ASVp
 --]]
 
 --[[
