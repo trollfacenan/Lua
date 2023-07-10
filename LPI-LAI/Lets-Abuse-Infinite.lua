@@ -1,11 +1,32 @@
 --[[
+
+LLLLLLLLLLL                            AAA               IIIIIIIIII
+L:::::::::L                           A:::A              I::::::::I
+L:::::::::L                          A:::::A             I::::::::I
+LL:::::::LL                         A:::::::A            II::::::II
+  L:::::L                          A:::::::::A             I::::I  
+  L:::::L                         A:::::A:::::A            I::::I  
+  L:::::L                        A:::::A A:::::A           I::::I  
+  L:::::L                       A:::::A   A:::::A          I::::I  
+  L:::::L                      A:::::A     A:::::A         I::::I  
+  L:::::L                     A:::::AAAAAAAAA:::::A        I::::I  
+  L:::::L                    A:::::::::::::::::::::A       I::::I  
+  L:::::L         LLLLLL    A:::::AAAAAAAAAAAAA:::::A      I::::I  
+LL:::::::LLLLLLLLL:::::L   A:::::A             A:::::A   II::::::II
+L::::::::::::::::::::::L  A:::::A               A:::::A  I::::::::I
+L::::::::::::::::::::::L A:::::A                 A:::::A I::::::::I
+LLLLLLLLLLLLLLLLLLLLLLLLAAAAAAA                   AAAAAAAIIIIIIIIII
+                                                                   
+--]]
+
+--[[
   features:
   - bypasses anti cheat which allows you to do basically anything
   - kill bricks cant kill you unless you spawn on since network ownership of a limb :thumbsup:
   - very powerful overall
-  - MADE BY DAMIX2131
   - credits to GEARHAX creator for button filler (rainbow baseplate button) bc i had to do one last button
-]]
+--]]
+
 local invite = true
 pcall(function()
     if invite then
