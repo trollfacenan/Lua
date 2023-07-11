@@ -9,15 +9,8 @@
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
-local ToolName
 
-for i,v in Player:GetDescendants() do
-	if v:IsA("Tool") and v:FindFirstChildOfClass("BindableFunction") or v:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") then
-		ToolName = v.Parent
-	end
-end
-
-local serverEndpoint = Character[ToolName]:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack[ToolName]:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint = Character.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn"}
 local defaultProperties = {}
 local defaultPart = Instance.new("Part")
