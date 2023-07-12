@@ -28,6 +28,7 @@ LLLLLLLLLLLLLLLLLLLLLLLLAAAAAAA                   AAAAAAAIIIIIIIIII
   - kill bricks cant kill you unless you spawn on since network ownership of a limb :thumbsup:
   - very powerful overall
   - credits to GEARHAX creator for button filler (rainbow baseplate button) bc i had to do one last button
+  - also credits to humanoidb (discord) for fixing error with "SafePlate is not a valid member of Workspace"
 --]]
 
 local invite = true
