@@ -3,6 +3,7 @@
 --[[ changes:
    1.0 - made so if game has anti cheat (that changes letters of the F3X's remote to like to something else or changes the letter T it wont break (no need to edit anything)
    1.1 - made a quick checker that allows you to just either keep F3X in backpack or equip the F3X and grab the tools name (previously it was set to F3X)
+   1.2 - made it work for all kinds of F3X names (F3X, building tool, etc)
 ]]
 
 
@@ -10,7 +11,7 @@ local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-local serverEndpoint = Character.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack.F3X:FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn"}
 local defaultProperties = {}
 local defaultPart = Instance.new("Part")
