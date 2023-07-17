@@ -1,3 +1,3 @@
 return {
- "sopolongkong_gaming" = true
+ ["sopolongkong_gaming"] = true
 }
