@@ -33,8 +33,8 @@ while true do
                     print(CoreGui.InGameShop.RollButton.TextLabel.Text .. " || Script Made By Damix :3")
                 end
             elseif Player.leaderstats.Fame.Value <= 10 then
-                if AutoKill then
-                    if Check1.Text ~= Text1 or Check1.Text ~= Text2 then
+                if Check1.Text ~= Text1 or Check1.Text ~= Text2 then
+                    if AutoKill then
                         if Humanoid.Health ~= 0 then
                             if Method == 1 then
                                 Humanoid.Health = 0
