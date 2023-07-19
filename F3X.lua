@@ -1,6 +1,6 @@
 -- https://v3rmillion.net/showthread.php?tid=1126774
 -- editing for my own purpouses
---[[ changes:
+--[[ change logs:
    1.0 - made so if game has anti cheat (that changes letters of the F3X's remote to like to something else or changes the letter T it wont break (no need to edit anything)
    1.1 - made a quick checker that allows you to just either keep F3X in backpack or equip the F3X and grab the tools name (previously it was set to F3X)
    1.2 - made it work for all kinds of F3X names (F3X, building tool, etc)
