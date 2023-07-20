@@ -3,8 +3,15 @@ local Character = Player.Character
 local Humanoid = Character.Humanoid
 local Root = Character.HumanoidRootPart
 local PlayerGui = Player.PlayerGui
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local AutoKill = false -- turn on if you want to keep dying constantly
 local Method = 1 -- 1. Set Humanoid To 0, 2. Teleport To Void
+
+local function Respawn()
+    if Humanoid.Health = 0 then wait(1)
+        ReplicatedStorage:WaitForChild("StatAPI"):FireServer("LoadChar", 1)
+    end
+end
 
 while true do
     wait()
@@ -13,7 +20,6 @@ while true do
             local CoreGui = PlayerGui:WaitForChild("CoreGui")
             local Main = CoreGui.InGameShop.Main
             local Check1 = Main.Guide.TextLabel
-            local ReplicatedStorage = game:GetService("ReplicatedStorage")
             local RollEffect = ReplicatedStorage:WaitForChild("RollEffect")
 
             local Text1 = "Collected 12 of 13 Purchasable Effects"
@@ -38,9 +44,11 @@ while true do
                         if Humanoid.Health ~= 0 then
                             if Method == 1 then
                                 Humanoid.Health = 0
+                                Respawn()
                             end
                             if Method == 2 then
-                                Root.CFrame = CFrame.new(0, -1000, 0)
+                                Root.CFrame = CFrame.new(0, -15000, 0)
+                                Respawn()
                             end
                         end
                     end
