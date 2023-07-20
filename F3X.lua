@@ -12,6 +12,8 @@
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
+
+pcall(function()
 local F3XC = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local F3XB = Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local serverEndpoint
@@ -25,6 +27,7 @@ end
    wait()
 until
 serverEndpoint ~= nil
+end)
 
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
