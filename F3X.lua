@@ -13,23 +13,8 @@ local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-pcall(function()
-   local F3XC = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
-   local F3XB = Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
-end)
-
-local serverEndpoint
-
-repeat
-if F3XB then
-   serverEndpoint = F3XB
-      elseif F3XC then
-   serverEndpoint = F3XC
-end
-   wait()
-until
-serverEndpoint ~= nil
-
+local F3X = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint = F3X
 
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
