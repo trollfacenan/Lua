@@ -5,14 +5,27 @@
    1.1 - made a quick checker that allows you to just either keep F3X in backpack or equip the F3X and grab the tools name (previously it was set to F3X)
    1.2 - made it work for all kinds of F3X names (F3X, building tool, etc)
    1.3 - edited classNames (added vechicle seat AND seat)
+   1.4 - (hopefully) made working checker
 ]]
 
 
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
+local F3XC = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local F3XB = Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint
 
-local serverEndpoint = Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+repeat
+if F3XB then
+   serverEndpoint = F3XB
+      elseif F3XC then
+   serverEndpoint = F3XC
+end
+   wait()
+until
+serverEndpoint ~= nil
+
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
 local defaultPart = Instance.new("Part")
