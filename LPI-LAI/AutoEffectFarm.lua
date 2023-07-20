@@ -1,14 +1,16 @@
+_G.AutoKill = false -- turn on if you want to keep dying constantly
+_G.Method = 1 -- 1. Set Humanoid To 0, 2. Teleport To Void
+
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
 local Humanoid = Character.Humanoid
 local Root = Character.HumanoidRootPart
 local PlayerGui = Player.PlayerGui
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local AutoKill = false -- turn on if you want to keep dying constantly
-local Method = 1 -- 1. Set Humanoid To 0, 2. Teleport To Void
 
 local function Respawn()
-    if Humanoid.Health = 0 then wait(1)
+    if Humanoid.Health == 0 then
+        wait(1)
         ReplicatedStorage:WaitForChild("StatAPI"):FireServer("LoadChar", 1)
     end
 end
@@ -39,16 +41,20 @@ while true do
                     print(CoreGui.InGameShop.RollButton.TextLabel.Text .. " || Script Made By Damix :3")
                 end
             elseif Player.leaderstats.Fame.Value <= 10 then
-                if Check1.Text ~= Text1 or Check1.Text ~= Text2 then
-                    if AutoKill then
-                        if Humanoid.Health ~= 0 then
-                            if Method == 1 then
-                                Humanoid.Health = 0
-                                Respawn()
-                            end
-                            if Method == 2 then
-                                Root.CFrame = CFrame.new(0, -15000, 0)
-                                Respawn()
+                if Check1.Text ~= Text2 then
+                    if Check1.Text ~= Text1 then
+                        if AutoKill then
+                            if Humanoid.Health ~= 0 then
+                                if Method == 1 then
+                                    Humanoid.Health = 0
+                                    Respawn()
+                                end
+                                if Method == 2 then
+                                    if Root then
+                                        Root.CFrame = CFrame.new(0, -15000, 0)
+                                    end
+                                    Respawn()
+                                end
                             end
                         end
                     end
