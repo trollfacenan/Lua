@@ -1,5 +1,6 @@
 _G.AutoKill = false -- turn on if you want to keep dying constantly
 _G.Method = 1 -- 1. Set Humanoid To 0, 2. Teleport To Void
+_G.RespawnTime = 0.5 -- Change This To Respawn Quicker
 
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
@@ -10,7 +11,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local function Respawn()
     if Humanoid.Health == 0 then
-        wait(1)
+        wait(RespawnTime)
         ReplicatedStorage:WaitForChild("StatAPI"):FireServer("LoadChar", 1)
     end
 end
