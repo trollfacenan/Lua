@@ -12,7 +12,7 @@ local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-local serverEndpoint = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint = Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
 local defaultPart = Instance.new("Part")
