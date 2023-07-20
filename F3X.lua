@@ -13,7 +13,7 @@ local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-local F3X = Character::FindFirstChild("ServerEndpoint", true) or Backpack:FindFirstChild("ServerEndpoint", true)
+local F3X = Character:FindFirstChild("ServerEndpoint", true) or Backpack:FindFirstChild("ServerEndpoint", true)
 local serverEndpoint = F3X
 
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
