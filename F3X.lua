@@ -1,11 +1,14 @@
 -- https://v3rmillion.net/showthread.php?tid=1126774
 -- editing for my own purpouses
+
 --[[ change logs:
    1.0 - made so if game has anti cheat (that changes letters of the F3X's remote to like to something else or changes the letter T it wont break (no need to edit anything)
    1.1 - made a quick checker that allows you to just either keep F3X in backpack or equip the F3X and grab the tools name (previously it was set to F3X)
    1.2 - made it work for all kinds of F3X names (F3X, building tool, etc)
    1.3 - edited classNames (added vechicle seat AND seat)
    1.4 - (hopefully) made working checker
+   1.5 - recovered script because the checker didnt work at all and broke entire script
+   1.6 - just learnt about existence of "FindFirstChildWhichIsA". Added it to check for tool
 ]]
 
 
@@ -13,7 +16,7 @@ local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-local serverEndpoint = Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local serverEndpoint = Character:FindFirstChildWhichIsA("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildWhichIsA("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
