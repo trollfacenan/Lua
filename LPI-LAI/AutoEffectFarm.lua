@@ -11,13 +11,13 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local function Respawn()
     if Humanoid.Health == 0 then
-        wait(RespawnTime)
+        task.wait(RespawnTime)
         ReplicatedStorage:WaitForChild("StatAPI"):FireServer("LoadChar", 1)
     end
 end
 
 while true do
-    wait()
+    task.wait()
     pcall(
         function()
             local CoreGui = PlayerGui:WaitForChild("CoreGui")
