@@ -9,14 +9,29 @@
    1.4 - (hopefully) made working checker
    1.5 - recovered script because the checker didnt work at all and broke entire script
    1.6 - just learnt about existence of "FindFirstChildWhichIsA". Added it to check for tool
-]]
+   1.7 - credits to humanoid for WaitForChildOfClass function
+--]]
 
 
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
 local Backpack = Player.Backpack
 
-local serverEndpoint = Character:FindFirstChildWhichIsA("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or Backpack:FindFirstChildWhichIsA("Tool"):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
+local function WaitForChildOfClass(class, parent, time_)
+    if time_ == nil then 
+        repeat
+            task.wait()
+        until parent:FindFirstChildOfClass(class)
+        return parent:FindFirstChildOfClass(class)
+    else
+        task.wait(time_)
+        if parent:FindFirstChildOfClass(class) then
+            return parent:FindFirstChildOfClass(class)
+        end
+    end
+end  
+
+local serverEndpoint = WaitForChildOfClass("Tool", Character):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction") or WaitForChildOfClass("Tool", Backpack):FindFirstChildOfClass("BindableFunction"):FindFirstChildOfClass("RemoteFunction")
 
 local classNames = {Part = "Normal", TrussPart = "Truss", WedgePart = "Wedge", CornerWedgePart = "Corner", SpawnLocation = "Spawn", VehicleSeat = "Vechicle Seat", Seat = "Seat"}
 local defaultProperties = {}
